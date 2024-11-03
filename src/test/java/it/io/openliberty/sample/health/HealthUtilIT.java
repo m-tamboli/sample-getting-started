@@ -43,7 +43,7 @@ public class HealthUtilIT {
     String healthURL = baseUrl + HEALTH_ENDPOINT;
     Client client = ClientBuilder.newClient();
     Response response = client.target(healthURL).request().get();
-    assertEquals(expectedResponseCode, response.getStatus(), "Response code is not matching " + healthURL);
+    assertEquals(expectedResponseCode, response.getStatus(), " Response code is not matching " + healthURL);
     JsonArray servicesstatus = response.readEntity(JsonObject.class).getJsonArray("checks");
     response.close();
     client.close();
